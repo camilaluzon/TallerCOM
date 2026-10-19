@@ -8,6 +8,7 @@ public class MainEmpleado {
         String apellido = new String();
         double salario = 0.0;
 
+        // Muestra una ventana emergente para solicitar el nombre del empleado.
         nombre = JOptionPane.showInputDialog("Ingrese el nombre del primer empleado:");
 
         while (nombre == null || nombre.trim().isEmpty()) {
@@ -20,6 +21,7 @@ public class MainEmpleado {
             apellido = JOptionPane.showInputDialog("El apellido no puede estar vacio. Ingrese nuevamente:");
         }
 
+        // Convierte el texto ingresado en la ventana a un número decimal.
         salario = Double.parseDouble(
                 JOptionPane.showInputDialog("Ingrese el salario mensual del primer empleado:")
         );
@@ -58,23 +60,20 @@ public class MainEmpleado {
 
         String resultado = "SALARIOS ANUALES INICIALES\n";
 
-        resultado += empleado1.getNombre() + " " + empleado1.getApellido()
-                + ": $" + empleado1.calcularSalarioAnual() + "\n";
+        resultado += empleado1.getNombre() + " " + empleado1.getApellido() + ": $" + empleado1.calcularSalarioAnual() + "\n";
 
-        resultado += empleado2.getNombre() + " " + empleado2.getApellido()
-                + ": $" + empleado2.calcularSalarioAnual() + "\n";
+        resultado += empleado2.getNombre() + " " + empleado2.getApellido() + ": $" + empleado2.calcularSalarioAnual() + "\n";
 
         empleado1.aumentarSalario();
         empleado2.aumentarSalario();
 
         resultado += "SALARIOS ANUALES CON AUMENTO DEL 10% \n";
 
-        resultado += empleado1.getNombre() + " " + empleado1.getApellido()
-                + ": $" + empleado1.calcularSalarioAnual() + "\n";
+        resultado += empleado1.getNombre() + " " + empleado1.getApellido() + ": $" + empleado1.calcularSalarioAnual() + "\n";
 
-        resultado += empleado2.getNombre() + " " + empleado2.getApellido()
-                + ": $" + empleado2.calcularSalarioAnual() +  "\n";
+        resultado += empleado2.getNombre() + " " + empleado2.getApellido() + ": $" + empleado2.calcularSalarioAnual() +  "\n";
 
+        // Presenta los resultados finales en una ventana emergente.
         JOptionPane.showMessageDialog(null, resultado);
 
     }

@@ -52,6 +52,7 @@ public class MainFrecuenciaCardiaca {
                 JOptionPane.showInputDialog("Ingrese el anio de nacimiento:")
         );
 
+        // Comprueba que el año de nacimiento sea válido y no supere el año actual.
         while (anio <= 0 || anio > 2026) {
             anio = Integer.parseInt(
                     JOptionPane.showInputDialog("Anio invalido. Ingrese un anio valido:")

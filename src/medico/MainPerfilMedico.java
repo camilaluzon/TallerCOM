@@ -85,10 +85,12 @@ public class MainPerfilMedico {
             peso = entrada.nextDouble();
         }
 
+        // Crea el perfil médico con los datos personales y físicos ingresados.
         PerfilMedico persona = new PerfilMedico(
                 nombre, apellido, sexo, dia, mes, anio, altura, peso
         );
 
+        // Muestra el perfil médico y los cálculos realizados.
         persona.mostrarPerfilMedico(diaActual, mesActual, anioActual);
 
         entrada.close();

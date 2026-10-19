@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class PruebaFactura {
     static void main() {
+
+        // Permite leer los datos ingresados por el usuario desde el teclado.
         Scanner entrada = new Scanner(System.in);
 
         String numeroPieza = new String();
@@ -22,12 +24,15 @@ public class PruebaFactura {
         System.out.print("Ingrese la descripcion: ");
         descripcion = entrada.nextLine();
 
+        // Repite la solicitud mientras el texto esté vacío o contenga solo espacios.
         while (descripcion.trim().isEmpty()) {
             System.out.print("La descripcion no puede estar vacia. Ingrese nuevamente: ");
             descripcion = entrada.nextLine();
         }
 
         System.out.print("Ingrese la cantidad: ");
+
+        // Lee una cantidad entera ingresada por el usuario.
         cantidad = entrada.nextInt();
 
         while (cantidad <= 0) {
@@ -43,12 +48,14 @@ public class PruebaFactura {
             precio = entrada.nextDouble();
         }
 
+        // Crea un objeto Factura y le envía los datos ingresados.
         Factura factura = new Factura(
                 numeroPieza, descripcion, cantidad, precio
         );
 
         factura.mostrarFactura();
 
+        // Cierra el objeto Scanner cuando ya no se necesitan más entradas.
         entrada.close();
     }
 }

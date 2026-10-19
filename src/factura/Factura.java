@@ -31,6 +31,7 @@ public class Factura {
         return descripcion;
     }
 
+    // Verifica que la cantidad sea positiva; si no, asigna cero.
     public void setCantidad(int cantidad) {
         if (cantidad > 0) {
             this.cantidad = cantidad;
@@ -55,6 +56,8 @@ public class Factura {
         return precio;
     }
 
+    // Calcula y devuelve el monto total de la factura.
+    // Multiplica la cantidad de artículos por el precio de cada uno.
     public double obtenerMontoFactura() {
         return cantidad * precio;
     }

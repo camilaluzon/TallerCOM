@@ -97,10 +97,9 @@ public class PerfilMedico {
 
         int edad = anioActual - getAnioNacimiento();
 
+        // Resta un año si todavía no ha llegado el cumpleaños.
         if (mesActual < getMesNacimiento()
-                || (mesActual == getMesNacimiento()
-                && diaActual < getDiaNacimiento())) {
-            edad--;
+                || (mesActual == getMesNacimiento() && diaActual < getDiaNacimiento())){edad--;
         }
 
         return edad;
@@ -140,6 +139,7 @@ public class PerfilMedico {
 
     public void mostrarPerfilMedico(int diaActual, int mesActual, int anioActual) {
 
+        // Calcula la edad tomando en cuenta si la persona ya cumplió años este año.
         int edad = calcularEdad(diaActual, mesActual, anioActual);
 
         System.out.println("\nPERFIL MEDICO");
